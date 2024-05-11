@@ -16,21 +16,36 @@ See `requirements.txt` for a full list of requirements which can be installed us
 This project aims to classify sentences containing a single "be" are either a habitual or non-habitual usage. 
 
 #### Scripts
+
 *Habitual Rule Tagger.ipynb* should be ran first. It takes in a corpus of sentences containing a single "be" and tags classifies them according to our rule-based method. If you simply want to annotate a corpus for the habitual *be*, this script accomplishes this on its own.
 
 *Habitual Model Generator.ipynb* generates an automatic classification model, improving on the rule-based method. This script takes the output from the Habitual Tagger and a gold standard annotated data set to develop an ensemble classification model.
 
 #### Data
+
 *SPOHP Sentences.txt:* Sentences containing habitual and non-habitual be from the Samuel Proctor Oral History Program that were used in the development of the rule-based method (9296 sentences).
+
 *CORAAL (no labels).txt:* Unlabeled sentences containing habitual and non-habitual be from the Corpus of Regional African American English. Data that was unseen during our development to test the accuracy of the classification models (4531 sentences).
+
 *CORAAL (gold standard).txt:* Same as above but hand annotated to act as the gold standard for training and testing.
 
-## Project Structure
+#### Models
+*cv.joblib*: Current version of the Count Vectorizer model used for n-grams.
+
+*n-gram.joblib*: Current version of the n-gram model, fed in as input for the habitual model.
+
+*habituality_model.joblib*: Current version of the habitual model.
+
+### Project Structure
 - readme.md
 - Data
 	- SPOHP Sentences.txt
    	- CORAAL (no labels).txt
    	- CORAAL (gold standard).txt 
 - Scripts
-	- *Habitual Rule Tagger.ipynb* - Tags a corpus of sentences containing "be" as habitual or non-habitual according to our rule-based method
-	- *Habitual Model Generator.ipynb* - Uses output from the Habitual Rule tagger to create and export a classification model that classifies sentences containing "be" as habitual or non-habitual.
+	- Habitual Rule Tagger.ipynb
+	- Habitual Model Generator.ipynb
+- Models
+  	- cv.joblib
+  	- habituality_model.joblib
+  	- n_gram.joblib
