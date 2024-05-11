@@ -38,14 +38,15 @@ This project aims to classify sentences containing a single "be" are either a ha
 
 ### Project Structure
 - readme.md
-- Data
+- requirements.txt
+- data
 	- SPOHP Sentences.txt
    	- CORAAL (no labels).txt
    	- CORAAL (gold standard).txt 
-- Scripts
+- scripts
 	- Habitual Rule Tagger.ipynb
 	- Habitual Model Generator.ipynb
-- Models
+- models
   	- cv.joblib
   	- habituality_model.joblib
   	- n_gram.joblib
